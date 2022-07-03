@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div id="texto-descubrir">
+  <p>Administración</p>
+</div>
+<div class="row">
+  <div class="col col-md-4 col-sd-12">
+    <div class="card">
+      <div class="card-body">
+        <form #cancionForm="ngForm" (ngSubmit)="addCancion(cancionForm)">
+
+          <input type="hidden" name="_id" [(ngModel)]="cancionService.selectedCancion._id">
+
+          <div class="form-group">
+            <input type="text" name="Nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="cancionService.selectedCancion.Nombre">
+          </div>
+          <div class="form-group">
+            <input type="text" name="Artista" class="form-control" placeholder="Ingrese Artista" [(ngModel)]="cancionService.selectedCancion.Artista">
+          </div>
+          <div class="form-group">
+            <input type="text" name="Duracion" class="form-control" placeholder="Ingrese Duracion" [(ngModel)]="cancionService.selectedCancion.Duracion">
+          </div>
+          <div class="form-group">
+            <input type="number" name="Fecha" class="form-control" placeholder="Ingrese Fecha" [(ngModel)]="cancionService.selectedCancion.Fecha">
+          </div>
+          <div class="form-group">
+            <input type="text" name="Imagen" class="form-control" placeholder="Ingrese Imagen (URL)" [(ngModel)]="cancionService.selectedCancion.Imagen">
+          </div>
+          <div class="form-group">
+            <input type="text" name="Musica" class="form-control" placeholder="Ingrese Musica (URL)" [(ngModel)]="cancionService.selectedCancion.Musica">
+          </div>
+          <div class="form-group">
+            <input type="number" name="Favorito" class="form-control" placeholder="Favorito (1)Si (2) No" [(ngModel)]="cancionService.selectedCancion.Favorito">
+          </div>
+          <button class="btn btn-secondary">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 col-sd-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Artista</th>
+          <th>Duracion</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cancion of cancionService.canciones">
+          <td>{{cancion.Nombre}}</td>
+          <td>{{cancion.Artista}}</td>
+          <td>{{cancion.Duracion}}</td>
+          <td>{{cancion.Fecha}}</td>
+          <td>
+            <button class="btn btn-secondary btn-sm" (click) ="editCancion(cancion)">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button class="btn btn-secondary btn-sm" (click)="deleteCancion(cancion._id!)">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

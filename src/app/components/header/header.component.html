@@ -1,0 +1,37 @@
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul id="secciones" class="navbar-nav mr-auto">
+              <li class="nav-item" id="logo-nav">
+                  <h1><a [routerLink]="['/home']" routerLinkActive="router-link-active">MindMusic</a></h1>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" area-current="page" [routerLink]="['/home']" routerLinkActive="router-link-active">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/favoritos']" routerLinkActive="router-link-active">Favoritos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/playlist']" routerLinkActive="router-link-active">Playlist</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/descubrir']" routerLinkActive="router-link-active">Descubrir</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/buscar']" routerLinkActive="router-link-active">Buscar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/administracion']" routerLinkActive="router-link-active">Adminis.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="cerr_sesion"(click)="authService.logout()">Cerrar Sesion</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+

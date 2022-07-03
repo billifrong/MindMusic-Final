@@ -1,0 +1,38 @@
+    <div class="container w-75 bg-white mt-5">
+        <div class="row align-items-stretch">
+            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6">
+
+            </div>
+            <div class="col p-5">
+                <h2>Bienvenido</h2>
+
+                <!--login-->
+                <form (submit)="signIn()">
+                    <div class="mb-4">
+                        <div class="form-group">
+                          <input type="text" [(ngModel)]="usuario.Email" name="email" class="form-control" placeholder="example@mail.com" required autofocus>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                      <div class="form-group">
+                        <input type="password" [(ngModel)]="usuario.Contrasenia" name="Constraseña" class="form-control" placeholder="Password" required>
+                     </div>
+                    </div>
+                    <div class="mb-4">
+                      <div class="form-group">
+                        <input type="password" [(ngModel)]="usuario.Admin" name="Admin" class="form-control" placeholder="¿Administrador?" required>
+                      </div>
+                     </div>
+                    <button type="button" id="registrarse-form" class=" mb-2 btn btn-primary btn-block" [routerLink]="['/signup']" routerLinkActive="router-link-active">
+                        Registrarse
+                    </button>
+                    <div>
+                      <button class="btn btn-primary btn-block">
+                        iniciar Sesion
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,82 @@
+#pag-playlist{
+  background-image: url(/images/fondo-playlist.jpg);
+  background-repeat: repeat;
+  background-size: 250%;
+  background-position: center;
+  background-position-y: 100%;
+}
+
+#texto-playlist{
+  margin-top: 3%;
+  color: black;
+  font-size: 60px;
+  -webkit-text-stroke: 0.3px violet;
+  margin-left: 8%;
+}
+
+#playlist-guardadas{
+  float: left;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-left: 8%;
+}
+
+#fotos-playlist{
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  width: 400px;
+  font-size: 20px;
+  color: black;
+  -webkit-text-stroke: 0.3px purple;
+  font-family: 'Merriweather', serif;
+}
+#playlist-guardadas img{
+  width: 180px;
+  height: 180px;
+  border: 7px solid black;
+  margin-bottom: 15px;
+}
+
+#footer-playlist{
+  font-size: 25px;
+  position: fixed;
+  bottom:0px;
+  color: white;
+}
+
+#gif{
+  border-radius: 100px;
+  margin-left: -28px;
+}
+
+#botones{
+  margin-top: 5%;
+  margin-left: 42%;
+  font-size: 40px;
+}
+
+#tiempos{
+  margin-top: 3%;
+  margin-left: 38%;
+  font-size: large;
+}
+
+#volumen{
+  margin-top: 1%;
+  margin-left: 41%;
+}
+
+h2{
+  margin-left: -190px;
+}
+
+.container{
+  margin-left: 16%;
+  width: 10000px;
+  height: 110%;
+  background-color: #cdcdcd;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+  overflow: hidden;
+}

@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div id="texto-descubrir">
+  <p>Descubrir 🔎</p>
+</div>
+<div class="container">
+    <ul>
+      <a *ngFor="let cancion of cancionService.canciones" >
+        <div class="col-md-4" id="cancion">
+          <p (click)="openFile(cancion.Musica)"><img id="imagen" src="{{cancion.Imagen}}" alt="" height="100px" width="100px"></p>
+          <li>{{cancion.Nombre}}</li>
+          <li>{{cancion.Artista}}</li>
+          <li>{{cancion.Fecha}}</li>
+          <i id="fav"class="fa-solid fa-heart-circle-plus">/</i>
+          <i id="favnt" class="fa-solid fa-heart-circle-minus"></i>
+        </div>
+      </a>
+    </ul>
+
+    <div id="botones">
+        <h2>Haga click en la canción que desea escuchar</h2>
+        <p><img id="gif" src="https://i.gifer.com/origin/ec/ec2cc02c120bfe9b02029b4a5506eae9.gif" alt="" height="200px" width="200px"></p>
+        <i (click)="play()" class="fa-solid fa-circle-play">/</i>
+        <i (click)="pause()" class="fa-solid fa-circle-pause">/</i>
+        <i (click)="stop()" class="fa-solid fa-circle-stop"></i>
+    </div>
+
+    <div id="tiempos">
+        <span>{{currentTime}}</span>
+        <input type="range" min="0" max="{{duration}}" [value]="seek" (input)="setSeekTo($event)">
+        <span>{{duration}}</span>
+    </div>
+
+    <div id="volumen">
+        <i class="fa-solid fa-volume-low"></i>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+        <i class="fa-solid fa-volume-high"></i>
+    </div>
+</div>
+<app-footer></app-footer>

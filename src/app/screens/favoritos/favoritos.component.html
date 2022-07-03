@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div id="texto-favoritos">
+  <p>Favoritos⭐</p>
+</div>
+<div id="FavAudioPlayer" class="container">
+
+  <div id="botones" class="col-md-3">
+    <h2>Haga click en la canción que desea escuchar</h2>
+    <p><img id="gif" src="https://i.pinimg.com/originals/56/d0/f8/56d0f8eea832d52459f0fc0ae2466462.gif" alt="" height="200px" width="200px"></p>
+    <i (click)="play()" class="fa-solid fa-circle-play">/</i>
+    <i (click)="pause()" class="fa-solid fa-circle-pause">/</i>
+    <i (click)="stop()" class="fa-solid fa-circle-stop"></i>
+  </div>
+  <div id="tiempos" class="col-md-3">
+    <span>{{currentTime}}</span>
+    <input type="range" min="0" max="{{duration}}" [value]="seek" (input)="setSeekTo($event)">
+    <span>{{duration}}</span>
+  </div>
+  <div id="volumen" class="col-md-3">
+      <i class="fa-solid fa-volume-low"></i>
+      <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+      <i class="fa-solid fa-volume-high"></i>
+  </div>
+
+  <div>
+      <ul>
+        <div class="horizontal"  *ngFor="let cancion of cancionService.canciones">
+          <div *ngIf="cancion.Favorito==1">
+            <div id="cancion" class="col-md-4">
+              <a id="favoritos-nombre">{{cancion.Nombre}}</a>
+              <p (click)="openFile(cancion.Musica)"><img id="imagen" src="{{cancion.Imagen}}" alt="" height="130px" width="130px"></p>
+            </div>
+          </div>
+        </div>
+      </ul>
+  </div>
+</div>

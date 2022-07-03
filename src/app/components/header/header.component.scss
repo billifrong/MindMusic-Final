@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+nav ul li{
+    font-family: 'Lobster', cursive;
+    color: rgb(250, 175, 250);
+    margin: 20px 2px 2px 2px;
+    width: 150px;
+    flex-wrap: nowrap;
+}
+
+nav ul li :hover{
+    background-color:pink;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+h1{
+    -webkit-text-stroke: 0.3px purple;
+    color: pink;
+    font-weight: bold;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+h1 :link{
+    text-decoration: none;
+    color: pink;
+    -webkit-text-stroke: 0.3px purple;
+}
+h1 :visited{
+    text-decoration: none;
+    color: pink;
+    -webkit-text-stroke: 0.3px purple;
+}
+
+

@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div id="texto-playlist">
+  <div class="row">
+      <div class="col-md-4 col-sd-4">
+          <a></a>
+      </div>
+      <div class="col-md-8 col-sd-8">
+          <p>𝄞 Playlist 𝄞</p>
+      </div>
+  </div>
+</div>
+
+<div id="playlist-guardadas" class="container col-md-4 col-sd-4">
+  <div class="row">
+      <div class="col-md-12 col-sd-4">
+          <ul>
+              <li id="fotos-playlist">
+                  <img src="https://yt3.ggpht.com/ytc/AKedOLTidkEIEzRiAaMsjQX5LD40dUbnIOE-e8qzcJZZ=s900-c-k-c0x00ffffff-no-rj" alt="relajante">
+                  <div *ngFor="let cancion of cancionService.canciones">
+                    <div *ngIf="cancion.Nombre=='Torero'">
+                      <p (click)="openFile(cancion.Musica)"> 1. Chayanne - Torero</p>
+                    </div>
+                    <div *ngIf="cancion.Nombre=='Una Noche en Medellin'">
+                      <p (click)="openFile(cancion.Musica)"> 2. Una Noche en Medellin</p>
+                    </div>
+                    <div *ngIf="cancion.Nombre=='Historia de Taxi'">
+                      <p (click)="openFile(cancion.Musica)"> 3. Historia de Taxi</p>
+                    </div>
+                  </div>
+              </li>
+              <li id="fotos-playlist">
+                  <img src="https://cont-1.p-cdn.us/images/39/7b/e7/23/5c0041fd9ce958d917208c7f/1080W_1080H.jpg" alt="80s">
+                  <div *ngFor="let cancion of cancionService.canciones">
+                    <div *ngIf="cancion.Nombre=='Dire, Dire Docks'">
+                      <p (click)="openFile(cancion.Musica)"> 1. Dire, Dire Docks</p>
+                    </div>
+                    <div *ngIf="cancion.Nombre=='Aquatic Ambiance'">
+                      <p (click)="openFile(cancion.Musica)"> 2. Aquatic Ambiance</p>
+                    </div>
+                    <div *ngIf="cancion.Nombre=='Accumula Town'">
+                      <p (click)="openFile(cancion.Musica)"> 3. Accumula Town</p>
+                    </div>
+                  </div>
+              </li>
+              <li id="fotos-playlist">
+                  <img src="https://is2-ssl.mzstatic.com/image/thumb/Music123/v4/f1/3e/01/f13e01b3-1f4f-12ff-e289-8accde93353d/source/1200x1200.webp" alt="top reggaeton">
+                  <div *ngFor="let cancion of cancionService.canciones">
+                    <div *ngIf="cancion.Nombre=='Un verano sin Ti'">
+                      <p (click)="openFile(cancion.Musica)"> 3. Un verano sin Ti</p>
+                    </div>
+                    <div *ngIf="cancion.Nombre=='Accumula Town'">
+                      <p (click)="openFile(cancion.Musica)"> 2. Accumula Town</p>
+                    </div>
+                    <div *ngIf="cancion.Nombre=='Una Noche en Medellin'">
+                      <p (click)="openFile(cancion.Musica)"> 1. Una Noche en Medellin</p>
+                    </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="col-sd-1">
+    <div id="botones">
+      <h2>Haga click en el nombre de la canción que desea escuchar</h2>
+      <p><img id="gif" src="https://www.wag1mag.com/wp-content/uploads/vinilos-wag1mag.gif" alt="" height="200px" width="200px"></p>
+      <i (click)="play()" class="fa-solid fa-circle-play">/</i>
+      <i (click)="pause()" class="fa-solid fa-circle-pause">/</i>
+      <i (click)="stop()" class="fa-solid fa-circle-stop"></i>
+    </div>
+    <div id="tiempos">
+      <span>{{currentTime}}</span>
+      <input type="range" min="0" max="{{duration}}" [value]="seek" (input)="setSeekTo($event)">
+      <span>{{duration}}</span>
+    </div>
+    <div id="volumen">
+        <i class="fa-solid fa-volume-low"></i>
+        <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+        <i class="fa-solid fa-volume-high"></i>
+    </div>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>
